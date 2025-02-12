@@ -194,7 +194,7 @@
   display:flex;
   align-items: center;
   justify-content:center;
-  box-shadow: rgba(71, 71, 71, 0.719) 8px 8px 8px;
+    box-shadow: rgba(71, 71, 71, 0.485) 8px 8px 8px;
 }
 .windowsNav{
 background-color: #baa7f4;

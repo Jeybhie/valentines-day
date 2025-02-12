@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import localFont from "next/font/local";
 import Style from './foods.module.css'
 import Places from './places'
+import Default from '../page';
 
 const indie = localFont({
     src: "../IndieFlower-Regular.ttf",
@@ -9,17 +10,18 @@ const indie = localFont({
 
 const foods = () => {
     const [wasClicked, setClicked] = useState(false);
+    const [isDefault, setDefault] = useState(false);
   return (
-    <>
+    <>{isDefault? <Default/> :
           <body className={indie.className}>
               <main className={Style.questionBody}>
                   {wasClicked ?
                       <Places />
                       : <>
-                                   <div className={Style.windowGraphics}>
+                             <div className={Style.windowGraphics}>
                             <div className={Style.windowsNav}>
                                 www.ToAshley.com
-                                <img src="/exit.png" className={Style.exit} />
+                                  <img src="/exit.png" className={Style.exit} onClick={()=>setDefault(true)} />
                             </div>
                       <div className={Style.questions}>
                           <img src="/cat5.gif" />
@@ -88,6 +90,7 @@ const foods = () => {
                   </>}
               </main>
           </body>
+           }
       </>
   )
 }

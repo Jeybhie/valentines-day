@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Questionnaires from "../questionnaires/questionnaires";
 import React, { useState } from "react";
 import Goodbai from "../questionnaires/goodbai";
+import Default from "../page";
 
 interface LetterProps {
   isClicked: boolean; 
@@ -22,13 +23,14 @@ const letter: React.FC<LetterProps> = ({ isClicked }) => {
                    <div className={Style.windowGraphics}>
                             <div className={Style.windowsNav}>
                                 www.ToAshley.com
-                                <img src="/exit.png" className={Style.exit} />
+                                <img src="/exit.png" className={Style.exit} onClick={()=>setYes(7)} />
                             </div>
                   {isClicked ? <>     
-                          {isYes === 6 ?
+                    {isYes === 7 ?
+                            <Default /> :
+                            isYes === 6 ?
                               <Goodbai/>
                               :
-                              
                               isYes === 5 ?
                       <Questionnaires/>:
                           isYes === 1 ?

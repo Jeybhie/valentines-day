@@ -3,14 +3,17 @@ import Style from "./questionnaires.module.css"
 import localFont from "next/font/local";
 import React, { useState } from "react";
 import Foods from "./foods";
+import Default from "../page";
+
 const indie = localFont({
     src: "../IndieFlower-Regular.ttf",
 })
 
 const questionnaires = () => {
-        const [wasClicked, setClicked] = useState(false);
+    const [wasClicked, setClicked] = useState(false);
+    const [isDefault, setDefault] = useState(false);
   return (
-      <>
+      <>{isDefault === true ? <Default/> :
           <body className={indie.className}>
               <main className={Style.questionBody}>
                   {wasClicked ?
@@ -19,7 +22,7 @@ const questionnaires = () => {
                              <div className={Style.windowGraphics}>
                             <div className={Style.windowsNav}>
                                 www.ToAshley.com
-                                <img src="/exit.png" className={Style.exit} />
+                                  <img src="/exit.png" className={Style.exit} onClick={()=>setDefault(true)} />
                             </div>
                       <div className={Style.questions}>
                           <img src="/preferred.jpg" />
@@ -68,7 +71,7 @@ const questionnaires = () => {
                           </div>
                           <div className={Style.OptionsContainer}>
                               <div className={Style.options}>
-                                  <img src="/Choco.jpg" alt="rose" className={Style.flower} />
+                                  <img src="/Choco.jpg" className={Style.flower} />
                               </div>
                               <div className={Style.options}>
                                   <img src="/shat.jpg" alt="rose" className={Style.flower} />
@@ -89,6 +92,7 @@ const questionnaires = () => {
                   </>}
               </main>
           </body>
+           }
       </>
   )
 }

@@ -1,7 +1,7 @@
 .windowGraphics {
     background-color: white;
     width: 90%;
-    height: 80vh;
+    height: 90vh;
     border-radius: 20px;
     border: solid 2px black;
     position: relative;
@@ -10,10 +10,8 @@
     justify-content: center;
     flex-direction: column;
     color:#645591;
-    box-shadow: rgba(71, 71, 71, 0.719) 8px 8px 8px;
-    margin-top: -70%;
+    box-shadow: rgba(71, 71, 71, 0.485) 8px 8px 8px;
 }
-
 .windowsNav {
     background-color: #baa7f4;
     position: absolute;
@@ -54,4 +52,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.mainBody{
+    height: 100vh;
+    width:100vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    overflow-Y:hidden;
 }
