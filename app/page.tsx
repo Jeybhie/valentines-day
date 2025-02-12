@@ -11,22 +11,16 @@ const indie = localFont({
 
 const Page = () => {
     const [wasClicked, setClicked] = useState(false);
-
-    const audio = new Audio("/beabadobee.mp3"); 
     
-useEffect(() => {
-    const handleInteraction = () => {
-        if (audio.paused) {
+    useEffect(() => {2
+        const handleInteraction = () => {
+            const audio = new Audio("/beabadobee.mp3");
             audio.play().catch(err => console.log("Autoplay blocked:", err));
-        } else {
-            audio.currentTime = 0; // Restart the audio if it's already playing
-        }
-        document.removeEventListener("click", handleInteraction);
-    };
-
-    document.addEventListener("click", handleInteraction);
-    return () => document.removeEventListener("click", handleInteraction);
-}, []);
+            document.removeEventListener("click", handleInteraction);
+        };
+        document.addEventListener("click", handleInteraction);
+        return () => document.removeEventListener("click", handleInteraction);
+    }, []);
 
     return (
         <>
