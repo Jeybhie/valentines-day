@@ -13,9 +13,9 @@ const Page = () => {
     const [wasClicked, setClicked] = useState(false);
 
 
-    useEffect(() => {
+    useEffect(() => {2
         const handleInteraction = () => {
-            const audio = new Audio("/mylove.wav");
+            const audio = new Audio("/mylove.mp4");
             audio.play().catch(err => console.log("Autoplay blocked:", err));
             document.removeEventListener("click", handleInteraction);
         };
@@ -34,7 +34,12 @@ const Page = () => {
 
             <main className={indie.className}>
 
-                <div className={Style.Body}>
+                    <div className={Style.Body}>
+                        <div className={Style.windowGraphics}>
+                            <div className={Style.windowsNav}>
+                                www.ToAshley.com
+                                <img src="/exit.png" className={Style.exit} />
+                            </div>
                     <div className={Style.floatingHeartContainer}>
                         <img src="/floatingHeart.png" className={Style.floatingHeart1} />
                         <img src="/floatingHeart.png" className={Style.floatingHeart2} />
@@ -54,32 +59,13 @@ const Page = () => {
                     <div className={Style.textContainer}>
                         Happy Valentine's <br />
                             Day!
+                        </div>
+                        
                     </div>
-                    <div className={Style.forgetMeNotContainer1}>
-                        <img src="/forgetMeFlower.png" className={Style.forgetMeFlower}/>
-                    </div>
-                    <div className={Style.forgetMeNotContainer2}>
-                        <img src="/bear.png" className={Style.forgetMeFlower}/>
-                    </div>
-                    <div className={Style.forgetMeNotContainer3}>
-                        <img src="/forgetMeFlower.png" className={Style.forgetMeFlower}/>
-                    </div>
-                    <img src="/camera.png" className={Style.tulips}/>
                     </div>
 
                     {wasClicked &&
-                        <Letter/>
-                        // <div className={Style.BubblesContainer}>
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                        //     <img src="/forgetMeFlower.png" className={Style.bubbles} />
-                            
-                        // </div>
+                        <Letter isClicked={true} />
                     }
 
                 </main>
