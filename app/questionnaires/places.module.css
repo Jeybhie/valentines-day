@@ -38,7 +38,7 @@
     margin-top: 40%;
      display: flex;
  justify-self: center;
-  width:60%;
+  width:50%;
 }
 .happy{
     color:#645591;
@@ -46,7 +46,7 @@
     margin-top: 20%;
 }
 .hearts{
-    width:100%;
+    width:80%;
 }
 .main{
     display: flex;
