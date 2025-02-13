@@ -71,7 +71,7 @@ const questionnaires = () => {
                           </div>
                           <div className={Style.OptionsContainer}>
                               <div className={Style.options}>
-                                  <img src="/Choco.jpg" className={Style.flower} />
+                                  <img src="/choco.jpg" className={Style.flower} />
                               </div>
                               <div className={Style.options}>
                                   <img src="/shat.jpg" alt="rose" className={Style.flower} />
